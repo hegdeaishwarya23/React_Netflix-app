@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from "./Components/Card"
+import Data from "./Components/Data"
 
 function App() {
+  function card(val) {
+    console.log(val)
+    return <Card img={val.img}
+      sname={val.sname}
+      genre={val.genre}
+      link={val.link} />
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="heading">top 6 amazing Korean series in netflix</h1>
+      <div className="cards">
+      { Data.map(card)}
+      </div>
     </div>
   );
 }
